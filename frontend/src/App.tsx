@@ -61,6 +61,9 @@ function App() {
     setPosts(
       posts.map((p) => {
         if (p.id === post_id) {
+          if (!p.comments) {
+            p.comments = [];
+          }
           p.comments.push(createdComment);
         }
 
